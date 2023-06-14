@@ -36,3 +36,126 @@
     transform: rotate(360deg);
   }
 }
+
+.ownerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.ownerCard {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ownerCard .attributes {
+  font-size: 1.1em; /* Aumentar o tamanho da fonte */
+  font-weight: bold; /* Tornar a fonte mais pesada */
+  color: #2413a5; /* Mudar a cor do texto */
+}
+
+
+.categorySection {
+  margin-bottom: 20px;
+}
+
+.ownerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  max-width: 300px;
+}
+
+.ownerCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 70%;
+  margin-bottom: 15px;
+}
+
+
+.main-info {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.additional-info p {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+/* Você pode adicionar estilos específicos para os diferentes ranks se quiser */
+.ownerCard.rank1 {
+  background-color: #f9f9f9;
+}
+
+.ownerCard.rank2 {
+  background-color: #e9e9e9;
+}
+
+.ownerCard.rank3 {
+  background-color: #d9d9d9;
+}
+
+
+.ownerCard.Private {
+  background-color: #f8f9fa;
+}
+
+.ownerCard.Corporal {
+  background-color: #e9ecef;
+}
+
+.ownerCard.Sergeant {
+  background-color: #dee2e6;
+}
+
+.ownerCard.Enforcer {
+  background-color: #ced4da;
+}
+
+.ownerCard.Lieutenant {
+  background-color: #f8f9fa;
+}
+
+.ownerCard.Captain {
+  background-color: #e9ecef;
+}
+
+.ownerCard.Major {
+  background-color: #dee2e6;
+}
+
+.ownerCard.Commander {
+  background-color: #ced4da;
+}
+
+.ownerCard.Brigadier {
+  background-color: #adb5bd;
+}
+
+
+.categoryHeader {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
