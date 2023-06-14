@@ -42,11 +42,20 @@ function OwnerCard({ owner }) {
   
   const displayName = name || formattedAddress;
   const linkUrl = name ? `https://${name}.stars.page/` : null;
-  
+
+  // Obtenha o número da URL da imagem
+  const imageNumber = imageUrl.split('.png')[0].split('/').pop();
+
+  // Formate o URL para o token
+  const linkimg = imageNumber ? `https://www.stargaze.zone/marketplace/stars1dpu585ulzzgnr352svgkuqfqf0pe3utg3txlj7smzzawc9dx2d5qpl9t36/${imageNumber}` : null;
 
   return (
     <div className={`ownerCard ${rank}`}>
-      {imageUrl && <img src={imageUrl} alt={displayName} style={{ width: '125px', height: '125px' }} />}
+      {imageUrl && (
+        <a href={linkimg} target="_blank" rel="noreferrer">  
+          <img src={imageUrl} alt={displayName} style={{ width: '125px', height: '125px' }} />
+        </a>
+      )}
       <p className="main-info">
         {linkUrl ? (
           <a href={linkUrl} target="_blank" rel="noreferrer">
@@ -57,8 +66,7 @@ function OwnerCard({ owner }) {
         )} : {count}
       </p>
       <div className="additional-info">
-      <p className="attributes">Attributes: {totalAttributes}</p>
-    
+        <p className="attributes">Attributes: {totalAttributes}</p>
         <p>Prestige: {totalPrestige}</p>
         <p>Authority: {totalAuthority}</p>
         <p>Influence: {totalInfluence}</p>
@@ -66,7 +74,6 @@ function OwnerCard({ owner }) {
       </div>
     </div>
   );
-  
 }
 
 export default OwnerCard;
