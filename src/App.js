@@ -176,13 +176,16 @@ function TokensList() {
 
   return (
     <div className="ownersGrid">
+      <center><h1>Ladder of Power</h1></center>
+      <center><h3>Factions Frontier - Mastering In/habitants Metropolis</h3></center>
+      <br></br>
       {categoryOrder.map(category =>
         categories[category] && (
           <div className="categorySection" key={category}>
             <div className="categoryHeader">{category}</div>
             <div className="ownerGrid">
               {categories[category]
-                .sort((a, b) => b.totalAttributes - a.totalAttributes) // Aqui é onde a mudança ocorre
+                .sort((a, b) => b.totalAttributes - a.totalAttributes)
                 .map(owner => (
                   <OwnerCard key={owner.address} owner={owner} />
                 ))}
