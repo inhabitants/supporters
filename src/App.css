@@ -1,19 +1,19 @@
 .App {
   text-align: center;
+  background-color: #f3f3f3;
+  padding: 20px;
 }
-
-.App-logo {
+ .App-logo {
   height: 40vmin;
   pointer-events: none;
+  animation: spin 20s linear infinite;
 }
-
-@media (prefers-reduced-motion: no-preference) {
+ @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: spin 20s linear infinite;
   }
 }
-
-.App-header {
+ .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -23,12 +23,105 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
+ .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
+ .ownerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+ .ownerCard {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
+}
+ .ownerCard:hover {
+  transform: translateY(-10px);
+}
+ .ownerCard .attributes {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+ .categorySection {
+  margin-bottom: 40px;
+}
+ .ownerCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+ .ownerCard img:hover {
+  transform: scale(1.1);
+}
+ .main-info {
+  font-weight: bold;
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+ .additional-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #7f8c8d;
+}
+ .ownerCard.Private {
+  background-color: #f9f4f4;
+  border: 2px solid #e74c3c;
+}
+ .ownerCard.Corporal {
+  background-color: #f6f9fb;
+  border: 2px solid #3498db;
+}
+ .ownerCard.Sergeant {
+  background-color: #f5f5f5;
+  border: 2px solid #9b59b6;
+}
+ .ownerCard.Enforcer {
+  background-color: #f4f7f9;
+  border: 2px solid #2ecc71;
+}
+ .ownerCard.Lieutenant {
+  background-color: #f2f6f8;
+  border: 2px solid #f1c40f;
+}
+ .ownerCard.Captain {
+  background-color: #f1f4f6;
+  border: 2px solid #e67e22;
+}
+ .ownerCard.Major {
+  background-color: #eff3f5;
+  border: 2px solid #16a085;
+}
+ .ownerCard.Commander {
+  background-color: #ecf1f3;
+  border: 2px solid #8e44ad;
+}
+ .ownerCard.Brigadier {
+  background-color: #e9edef;
+  border: 2px solid #34495e;
+}
+ .categoryHeader {
+  width: 100%;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #2c3e50;
+  text-align: center;
+}
+ @keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -36,112 +129,3 @@
     transform: rotate(360deg);
   }
 }
-
-.ownerGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-.ownerCard {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.ownerCard .attributes {
-  font-size: 1.1em; /* Aumentar o tamanho da fonte */
-  font-weight: bold; /* Tornar a fonte mais pesada */
-  color: #2413a5; /* Mudar a cor do texto */
-}
-
-
-.categorySection {
-  margin-bottom: 20px;
-}
-
-.ownerCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-  max-width: 300px;
-}
-
-.ownerCard img {
-  width: 100%;
-  height: auto;
-  border-radius: 70%;
-  margin-bottom: 15px;
-}
-
-
-.main-info {
-  font-weight: bold;
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.additional-info p {
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #666;
-}
-
-.ownerCard.Private {
-  background-color: #f8f9fa;
-}
-
-.ownerCard.Corporal {
-  background-color: #e9ecef;
-}
-
-.ownerCard.Sergeant {
-  background-color: #dee2e6;
-}
-
-.ownerCard.Enforcer {
-  background-color: #ced4da;
-}
-
-.ownerCard.Lieutenant {
-  background-color: #c2c8ce;
-}
-
-.ownerCard.Captain {
-  background-color: #b6bfc6;
-}
-
-.ownerCard.Major {
-  background-color: #abb3ba;
-}
-
-.ownerCard.Commander {
-  background-color: #9fa7af;
-}
-
-.ownerCard.Brigadier {
-  background-color: #929aa2;
-}
-
-
-.categoryHeader {
-  width: 100%;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-
