@@ -175,25 +175,36 @@ function TokensList() {
   if (error) return <p>Error :(</p>;
 
   return (
-    <div className="ownersGrid">
-      <center><h1>Ladder of Power</h1></center>
-      <center><h3>Factions Frontier - Mastering In/habitants Metropolis</h3></center>
-      <br></br>
-      {categoryOrder.map(category =>
-        categories[category] && (
-          <div className="categorySection" key={category}>
-            <div className="categoryHeader">{category}</div>
-            <div className="ownerGrid">
-              {categories[category]
-                .sort((a, b) => b.totalAttributes - a.totalAttributes)
-                .map(owner => (
-                  <OwnerCard key={owner.address} owner={owner} />
-                ))}
-            </div>
+    <div className="pageContainer">
+  <div className="header">
+  <a href="https://squad.inhabitants.zone/" target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', top: 0, right: 40 }}>
+      <h5>Squad Matrix</h5>
+    </a>
+    <center><h1>Ladder of Power</h1>
+    <h3>Factions Frontier - Mastering In/habitants Metropolis</h3></center>
+    <br></br>
+  </div>
+  <div className="body">
+    {categoryOrder.map(category =>
+      categories[category] && (
+        <div className="categorySection" key={category}>
+          <div className="categoryHeader">{category}</div>
+          <div className="ownerGrid">
+            {categories[category]
+              .sort((a, b) => b.totalAttributes - a.totalAttributes)
+              .map(owner => (
+                <OwnerCard key={owner.address} owner={owner} />
+              ))}
           </div>
-        )
-      )}
-    </div>
+        </div>
+      )
+    )}
+  </div>
+  <div className="footer">
+    <center><p>Made with ♥️ by <a href="https://inhabitants.zone/" target="_blank" rel="noopener noreferrer">inhabitants.zone</a></p></center>
+  </div>
+</div>
+    
   );
 
 }
