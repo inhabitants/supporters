@@ -17,6 +17,9 @@ const TOKENS = gql`
           url
         }
         rarityOrder
+        owner {
+          address
+        }
       }
     }
   }
