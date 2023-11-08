@@ -8,7 +8,6 @@ const TOKENS = gql`
     tokens(collectionAddr: $collectionAddr, limit: $limit, offset: $offset) {
       tokens {
         name
-        ownerAddrOrName
         tokenId
         traits {
           name
